@@ -20,7 +20,8 @@
     </bean>-->
 
     <bean id = "Person1"
-          class="com.example.IoC_and_DI.DI.Person">
+          class="com.example.IoC_and_DI.DI.Person"
+            scope="prototype">
         <property name="pet" ref="myDog"/>
         <property name="surname" value="${person.surname}"/>
         <property name="age" value="${person.age}"/>
