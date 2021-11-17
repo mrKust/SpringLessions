@@ -1,16 +1,40 @@
 package com.example.IoC_and_DI.DI;
 import com.example.IoC_and_DI.beans_and_container.Pet;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+@Component
+@Scope("singleton")
 public class Person {
     private Pet pet;
+    @Value("${person.surname}")
     private String surname;
+    @Value("${person.age}")
     private int age;
 
-    public Person(Pet pet) {
+    @Autowired
+    public Person(@Qualifier("myDog") Pet pet) {
         this.pet = pet;
     }
 
     public Person() {
 
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("Create Person");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("Delete Person");
     }
 
     public String getSurname() {
@@ -29,9 +53,9 @@ public class Person {
         this.age = age;
     }
 
-    public void setPet(Pet pet) {
+    /*public void setPet(Pet pet) {
         this.pet = pet;
-    }
+    }*/
 
     public void callPet() {
         System.out.println("Pet c'mon!");

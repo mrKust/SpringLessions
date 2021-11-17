@@ -15,15 +15,22 @@ public class Main {
 
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("annotationContext.xml");
-//        Person person = context.getBean("Person1", Person.class);
-//        person.callPet();
-//        System.out.println(person.getSurname());
-//        System.out.println(person.getAge());
-        Dog dog = context.getBean("myDog", Dog.class);
-        Cat cat = context.getBean("myCat", Cat.class);
+        Person person = context.getBean("person", Person.class);
+        person.callPet();
+        System.out.println(person.getSurname());
+        System.out.println(person.getAge());
+        Dog mydog = context.getBean("myDog", Dog.class);
+        Dog yourDog = context.getBean("myDog", Dog.class);
+        System.out.println("Same dogs? " + (mydog==yourDog));
+        System.out.println(mydog.toString());
+        System.out.println(yourDog.toString());
 
-        dog.voice();
-        cat.voice();
+        Cat myCat = context.getBean("myCat", Cat.class);
+//        Dog dog = context.getBean("myDog", Dog.class);
+//        Cat cat = context.getBean("myCat", Cat.class);
+
+        //dog.voice();
+        //cat.voice();
         context.close();
 
     }

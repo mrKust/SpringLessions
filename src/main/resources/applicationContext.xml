@@ -6,7 +6,7 @@
               class = "com.example.IoC_and_DI.beans_and_container.Dog">
         </bean>
 
-        <bean id = "PetCat"
-              class = "com.example.IoC_and_DI.beans_and_container.Cat">
-        </bean>
+<!--        <bean id = "PetCat"-->
+<!--              class = "com.example.IoC_and_DI.beans_and_container.Cat">-->
+<!--        </bean>-->
 </beans>
