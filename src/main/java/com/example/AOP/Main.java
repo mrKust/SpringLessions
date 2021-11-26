@@ -12,13 +12,25 @@ public class Main {
         universityLibrary.getBook();
         universityLibrary.getMagazine(1);
 
-        universityLibrary.returnBook();
-        universityLibrary.returnMagazine();
+        System.out.println(universityLibrary.returnBook());
+
+        /*universityLibrary.returnMagazine();
 
         universityLibrary.addBook();
 
         SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
-        schoolLibrary.getBook();
+        schoolLibrary.getBook();*/
+
+        /*University university = context.getBean("university", University.class);
+
+        university.addStudents();
+
+        try {
+            university.getListOfStudents();
+
+        } catch (Exception e) {
+            System.out.println("Выявлена ошибка " + e);
+        }*/
 
         context.close();
     }
